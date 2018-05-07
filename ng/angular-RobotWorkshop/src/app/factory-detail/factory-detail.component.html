@@ -1,0 +1,26 @@
+<p>
+  factory-detail works!
+</p>
+
+
+
+
+<div *ngIf="RobotFactoy">
+
+
+  n<p>
+  robot-factory works!
+</p>
+
+  <h2>{{ RobotFactoy.branchName  | uppercase}} Details</h2>
+  <div><span>id: </span>{{RobotFactoy.id}}</div>
+  <div><span>city: </span>{{RobotFactoy.city}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="RobotFactoy.branchName" placeholder="branh name">
+    </label>
+  </div>
+
+
+</div>

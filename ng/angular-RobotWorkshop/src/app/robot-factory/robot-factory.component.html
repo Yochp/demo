@@ -1,0 +1,33 @@
+<div *ngIf="selectedFactory">
+
+
+n<p>
+  robot-factory works!
+</p>
+
+<h2>{{ selectedFactory.branchName  | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedFactory.id}}</div>
+<div><span>city: </span>{{selectedFactory.city}}</div>
+
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedFactory.branchName" placeholder="branh name">
+  </label>
+</div>
+
+
+</div>
+
+
+
+<h2>My factoryes</h2>
+<ul class="factory">
+  <li *ngFor="let fac of factory" (click)="onSelect(fac)"  [class.selected]="robotFactoy === selectedFactory">
+    <span class="badge">brancg name: {{fac.branchName}}</span>
+    <span class="badge"> id : {{fac.id}}</span>    x:{{fac.coordinates.lat}} \ y:{{fac.coordinates.lon}}
+  </li>
+</ul>
+
+
+
+<app-factory-detail [RobotFactoyDTLS]="selectedFactory"> </app-factory-detail>
